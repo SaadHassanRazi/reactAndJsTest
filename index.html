@@ -32,18 +32,15 @@
         { nested: [1, 2, 3] },
       ];
       const removeDuplicates = (arr) => {
-        const newArr = [];
         const removeDuplicates = new Set();
 
         for (const item of arr) {
           const itemString = JSON.stringify(item);
           if (!removeDuplicates.has(itemString)) {
-            newArr.push(item);
             removeDuplicates.add(itemString);
           }
         }
-
-        return newArr;
+        return removeDuplicates;
       };
 
       console.log(removeDuplicates(input));
