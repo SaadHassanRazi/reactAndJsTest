@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Write a JavaScript function that checks if a string is a palindrome (reads the same backward as forward).
+      const palindromeChecker = (str) => {
+        const palindrome = str.split("").reverse("").join("");
+        return str !== palindrome ? false : true;
+      };
+      console.log(palindromeChecker("abc"));
+
+      //Write a JavaScript function that removes duplicates from an array.
+      input = [
+        1,
+        2,
+        "hello",
+        "world",
+        { name: "Alice", age: 30 },
+        { name: "Alice", age: 30 },
+        [1, 2, 3],
+        [1, 2, 3],
+        "hello",
+        3,
+        [4, 5, { nested: "object" }],
+        [4, 5, { nested: "object" }],
+        { nested: [1, 2, 3] },
+        { nested: [1, 2, 3] },
+      ];
+      const removeDuplicates = (arr) => {
+        const newArr = [];
+        const removeDuplicates = new Set();
+
+        for (const item of arr) {
+          const itemString = JSON.stringify(item);
+          if (!removeDuplicates.has(itemString)) {
+            newArr.push(item);
+            removeDuplicates.add(itemString);
+          }
+        }
+
+        return newArr;
+      };
+
+      console.log(removeDuplicates(input));
+
+      //Write a JavaScript class Animal with a method speak(). Then, create a subclass Dog that overrides the speak() method.
+      // Base class
+      class Animal {
+        constructor(name) {
+          this.name = name;
+        }
+
+        speak() {
+          console.log(`${this.name} makes a noise.`);
+        }
+      }
+
+      class Dog extends Animal {
+        speak() {
+          console.log(`${this.name} barks.`);
+        }
+      }
+
+      const animal = new Animal("animal");
+      animal.speak();
+      const dog = new Dog("dog");
+      dog.speak();
+
+      //   ⁠Write JavaScript code to create a new HTML element, add it to the DOM, and attach an event listener to it.
+      const button = document.createElement("button");
+      button.innerHTML = "Random";
+      button.addEventListener("click", () => {
+        console.log("Click");
+      });
+
+      document.body.appendChild(button);
+    </script>
+  </body>
+</html>
