@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import SecondNestedComponent from "./SecondNestedComponent";
-import CounterContext from "./context/counterContext";
+import CounterContext from "./context/authContext";
 
 const NestedComponent = () => {
   const { count, increment, decrement } = useContext(CounterContext);
   return (
     <div>
-        3rd Level Nested Component
+      3rd Level Nested Component
       <h2>Count: {count}</h2>
       <button onClick={increment}>Increment</button>
       <button onClick={decrement}>Decrement</button>

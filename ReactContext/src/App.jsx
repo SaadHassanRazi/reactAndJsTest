@@ -1,15 +1,15 @@
 import React from "react";
-import { CounterProvider } from "./context/counterContextProvider";
-import FirstComponent from "./FirstComponent";
+import Router from "./Router";
+import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from "./context/AuthProvider";
 
 const App = () => {
   return (
-    <CounterProvider>
-      <div className="App">
-        <h1>Counter App</h1>
-        <FirstComponent />
-      </div>
-    </CounterProvider>
+    <BrowserRouter>
+      <AuthProvider>
+        <Router />
+      </AuthProvider>
+    </BrowserRouter>
   );
 };
 export default App;
