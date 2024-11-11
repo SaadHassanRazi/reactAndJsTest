@@ -1,13 +1,22 @@
 import React from "react";
-import Router from "./Router";
+import "./App.css";
+
 import { BrowserRouter } from "react-router-dom";
-import { AuthProvider } from "./context/AuthProvider";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Router from "./frameworkUi/Router";
+import { AuthProvider } from "./useCases/context/AuthProvider";
+import WaveAnimation from "./interface/components/WaveAnimation";
 
 const App = () => {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Router />
+        <div className="main-container">
+          <WaveAnimation />
+          <div className="content">
+            <Router />
+          </div>
+        </div>
       </AuthProvider>
     </BrowserRouter>
   );
